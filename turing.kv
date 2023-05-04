@@ -1,0 +1,36 @@
+<MyGridLayout>:
+<MyGridLayout>:
+
+<MainScreen>:
+
+    MyGridLayout:
+        cols:2
+
+        BoxLayout:
+            orientation:'vertical'
+            size_hint:0.1,0.1
+            Button:
+                text:'state'
+
+            Button:
+                text:'transition'
+                on_press: root.manager.current = 'executing'
+        MyWidget:
+
+
+<ExecutingScreen>:
+    MyGridLayout:
+        cols:2
+
+        BoxLayout:
+            orientation:'vertical'
+            size_hint:0.1,0.1
+            Button:
+                text:'voltar'
+                on_press: root.manager.current = 'main_screen'
+        TapeWidget:
+
+
+    
+
+    
