@@ -1,0 +1,55 @@
+<MyGridLayout>:
+<MyGridLayout>:
+
+<MainScreen>:
+
+    MyGridLayout:
+        cols:2
+
+        BoxLayout:
+            orientation:'vertical'
+            size_hint:0.1,0.1
+            Button:
+                text:'state'
+
+            Button:
+                text:'transition'
+                on_press: root.manager.current = 'executing'
+        MyWidget:
+
+
+<ExecutingScreen>:
+    AnchorLayout:
+    
+        anchor_x: 'center'
+        anchor_y: 'top'
+      
+        GridLayout:
+            cols:2
+            size_hint:0.1,0.1
+            Button:
+                text:'voltar'
+                on_press: root.manager.current = 'main_screen'
+            Button:
+                text:'dreita'
+                on_press: _tape.hd.pos=(_tape.hd.pos[0]+20,_tape.hd.pos[1]+0)
+    AnchorLayout:
+    
+        anchor_x: 'center'
+        anchor_y: 'center'
+	
+		BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.5, 0.5
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            TapeWidget:
+                id: _tape
+                size_hint: 1, 1
+
+        
+
+
+    
+
+    
